@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <center>
+    <table border="3px">
+      <tr>
+        <td>pk</td>
+        <td>Name</td>
+        <td>Author</td>
+        <td>Date</td>
+      </tr>
+      {% for ro in records %}
+      <tr>
+        <td>{{ro.pk}}</td>
+        <td>{{ro.name}}</td>
+        <td>{{ro.author}}</td>
+        <td>{{ro.date}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </center>
+</body>
+</html>
