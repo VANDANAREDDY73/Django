@@ -48,3 +48,17 @@ def insert_access(request):
     return render(request,'display_access.html',d1)
     
   return render(request,'insert_access.html',d)
+
+def select_multiple_topic(request):
+  QLTO=Topic.objects.all()
+  d={'topics':QLTO}
+  if request.method=='POST':
+    tn=request.POST.getlist('tn')
+    etn=webpage.objects.none()
+    for to in tn:
+      etn=etn|webpage.objects.filter(Topic_Name=to)
+    d1={'webpages':etn}
+    return render(request,'display_webpage.html',d1)
+
+
+  return render(request,'select_multiple_topic.html',d)
