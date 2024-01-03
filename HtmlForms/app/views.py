@@ -62,3 +62,18 @@ def select_multiple_topic(request):
 
 
   return render(request,'select_multiple_topic.html',d)
+
+def checkbox_webpage(request):
+
+  qlto=Topic.objects.all()
+  d={'topics':qlto}
+  if request.method=='POST':
+    tn=request.POST.getlist('tn')
+    etn=webpage.objects.none()
+    for to in tn:
+      etn=etn|webpage.objects.filter(Topic_Name=to)
+    d1={'webpages':etn}
+    return render(request,'display_webpage.html',d1)
+
+
+  return render(request,'checkbox_webpage.html',d)

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>checkbox</title>
+</head>
+<body>
+  <center>
+    <h1>checkbox</h1>
+    <form method="POST" action="{% url 'select_multiple_topic' %}">
+      {% csrf_token %}
+      {% for to in topics %}
+      <label for="tn">{{to.Topic_Name}}</label>
+      <input type="checkbox" name="tn" id="tn" value="{{to.Topic_Name}}">
+      {% endfor %}<br><br>
+      <input type="submit">
+    </form>
+  </center>
+</body>
+</html>
