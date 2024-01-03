@@ -1,0 +1,14 @@
+htmlforms                        djangoforms
+textboxes - html tags        python oops  
+validations-js               inbuilt validation 
+
+
+djangoforms-
+
+forms.py inside the application
+from django import forms
+
+is_valid()
+
+Cleaned data -dictioned format
+{'sname':manoj,'sid':30,'address':bglr}
