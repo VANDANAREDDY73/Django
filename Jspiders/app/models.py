@@ -7,3 +7,15 @@ class Pyspiders(models.Model):
   address=models.TextField()
   email=models.EmailField(default='hi@gmail.com')
   remail=models.EmailField(default='hi@gmail.com')
+  def __str__(self):
+    return self.Sname
+  
+
+
+
+
+
+
+
+  
+  
